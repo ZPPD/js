@@ -1,0 +1,26 @@
+let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is ', 'about', 'what', 'you', 'can', 'figure', 'out', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'];
+
+//remove from the end of an array
+let remove = secretMessage.pop();
+
+//check the length of the array
+console.log(secretMessage.length);
+
+//add to the end of the array
+let addToEnd = secretMessage.push('to');
+let addAgain = secretMessage.push('Program');
+
+//changing a word in the array
+secretMessage[7] = 'right';
+
+//remove from the front
+let frontRemove = secretMessage.shift();
+//add to the front
+let add = secretMessage.unshift('Programming');
+
+/*remove elements from 6 to 10 and replace with 'know'
+array.splice(indexToStart,numberOfIndices,'stringToAdd')*/
+let removeStrings = secretMessage.splice(6,5,'know,');
+
+//print the array as a sentence, space between the quotation marks to keep the words separated
+console.log(secretMessage.join(' '));
