@@ -46,9 +46,11 @@ function mostPopularDays(week) {
     });
 
     if(mostPopularDay.length>1){
-        console.log('The most popular days are: '+ mostPopularDay);
+        // console.log('The most popular days are: '+ mostPopularDay);
+        return mostPopularDay;
     } else{
-        console.log('The most popular day is '+ mostPopularDay);
+        // console.log('The most popular day is '+ mostPopularDay);
+        return mostPopularDay;
     }    
 }
 function compare(a,b) {
