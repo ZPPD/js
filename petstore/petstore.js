@@ -87,24 +87,7 @@ var weekDays = [mon, tue, wed, thur, fri, sat, sun]
  */
 function createAnimalObjects(names, types, breeds) {
     // IMPLEMENT THIS FUNCTION!
-    // var animalArr = [];
-
-    // names[i].length  = types[i].length = breeds[i].length
-    // for(var i = 0; i < animalArr.length; i++){
-
-    // }
-    // var container = '';
-    // var Animal = '';
-    // if ((names.length == types.length) && (types.length == breeds.length) && (names.length > 0)) {
-    //   for (var i = 0; i <= names.length - 1; i++) {
-    //     Animal[i].container.concat(names[i], types[i], breeds[i]);
-    //   }
-    //   return Animal;
-    // }
-    // else {
-    //   return '';
-    // }
-
+    
     
     var animalArr = [];
 
