@@ -50,7 +50,7 @@ function mostPopularDays(week) {
         return mostPopularDay;
     } else{
         // console.log('The most popular day is '+ mostPopularDay);
-        return mostPopularDay;
+        return mostPopularDay.toString();
     }    
 }
 function compare(a,b) {
@@ -105,22 +105,27 @@ function createAnimalObjects(names, types, breeds) {
     //   return '';
     // }
 
-    this.names = names;
-    this.types = types;
-    this.breeds = breeds;
+    
     var animalArr = [];
 
-    if ((names.length == types.length) && (types.length == breeds.length) && (names.length > 0)){
-        for(var i = 0; i < names.length-1; i++){
-            animalArr.push(new Animal(names[i], types[i], breeds[i]))
-        }
-        return animalArr[0].names;
-    } else {
+    if(names == null || types == null || breeds == null || names.length !== types.length || types.length !== breeds.length || names == 0 || types == 0 || breeds == 0){
         return animalArr;
     }
+    
+         var len = names.length;
+        for(var i = 0; i < len; i++){
+            animalArr.push({
+                name: names[i],
+                type: types[i],
+                breed: breeds[i]
+            });
+            // console.log(animalArr);
+        }
+        return animalArr;
 
+   
 }
-
+// var names = null;
 var names = ['Buddy', 'Lili', 'Poly'];
 var types = ['dog', 'cat', 'bird'];
 var breeds = ['labrador', 'persian', 'parrot'];
