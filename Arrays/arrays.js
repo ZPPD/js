@@ -32,7 +32,7 @@ let anotherCopy = secretMessage.slice(2,4);
 //print the array as a sentence, space between the quotation marks to keep the words separated
 console.log(secretMessage.join(' '));
 
-------------------------------------------------
+// ------------------------------------------------
 
 //loop through an array forEach()
 let array1 = ['a', 'b', 'c'];
