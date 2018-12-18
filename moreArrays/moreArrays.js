@@ -82,4 +82,30 @@ function findUniq(arr) {
   }
   return answer;
 }
-findUniq([ 1, 1, 1, 2, 1, 1 ]);
+findUniq([1, 1, 1, 2, 1, 1]);
+
+/*=======================================
+  Given a list of integers and a single sum value, return the first two values (parse from the left please) in order of appearance that add up to form the sum. 
+  sum_pairs([11, 3, 7, 5], 10)  == [3, 7]
+=======================================*/
+var sum_pairs = function(ints, s) {
+  let limit = ints.length;
+
+  var map = {},
+    pair;
+
+  for (var i = 0; i < limit; i++) {
+    var a = ints[i];
+    var b = s - a;
+    var j = map[b];
+    if (j !== undefined && i < limit && j < limit) {
+      limit = i > j ? i : j;
+      pair = i < j ? [a, b] : [b, a];
+    }
+    var tmp = map[a];
+    if (tmp === undefined || i < tmp) {
+      map[a] = i;
+    }
+  }
+  return pair;
+};
