@@ -7,8 +7,10 @@ pigIt('Hello world !');     // elloHay orldway !
 function pigIt(str) {
   //Code here
   const arr = str.split(" ");
-
-  const output = arr.map(word => word.slice(1) + word.slice(0, 1) + "ay");
+  const punctuation = /[!,.?]/;
+  const output = arr.map(word =>
+    !punctuation.test(word) ? word.slice(1) + word.slice(0, 1) + "ay" : word
+  );
 
   return output.join(" ");
 }
