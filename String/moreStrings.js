@@ -14,3 +14,24 @@ function pigIt(str) {
 
   return output.join(" ");
 }
+
+/* ================================
+ Return true if a portion of str1 characters can be rearranged to match str2, otherwise return false.
+scramble('rkqodlw', 'world') ==> True
+scramble('cedewaraaossoqqyt', 'codewars') ==> True
+scramble('katas', 'steak') ==> False
+==============================*/
+function scramble(str1, str2) {
+  const counts = new Map();
+  for (let i of str1) {
+    counts.set(i, (counts.get(i) || 0) + 1);
+  }
+  for (let i of str2) {
+    let value = counts.get(i);
+    if (!value) {
+      return false;
+    }
+    counts.set(i, value - 1);
+  }
+  return true;
+}
