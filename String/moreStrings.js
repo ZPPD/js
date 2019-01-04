@@ -35,3 +35,67 @@ function scramble(str1, str2) {
   }
   return true;
 }
+
+/* ================== 
+  Reverse a string 
+  reverseString('hello') === 'olleh'
+======================= */
+
+function reverseString(str) {
+  /* ======== Solution 1 ==========
+  const arr = str.split('');
+  arr.reverse();
+
+  return arr.join('');*/
+
+  ///////
+
+  /* ======== Solution 2 =========  
+  let revStr = '';
+    for(let i = str.length -1; i>=0; i--){
+      revStr = revStr + str[i];
+    }
+  return revStr;*/
+
+  //////
+
+  /* ========== Solution 3 =========
+  let revStr = '';
+    for(let i = 0; i <= str.length -1; i++){
+      revStr = str[i] + revStr;
+    }
+  return revStr;*/
+
+  ////
+
+  /* ======= Solution 4 =============
+  let revStr = '';
+    for(let char of str){
+      revStr = char + revStr;
+    }
+  return revStr;*/
+
+  //////
+
+  /* ========= Solution 5 ============
+  let revStr = '';
+  str.split('').forEach(function(char){
+    revStr = char + revStr;
+  });
+  return revStr;*/
+
+  /* ========== Solution 6 ==========
+  let revStr = '';
+  str.split('').forEach(char => revStr = char + revStr);
+  return revStr;*/
+
+  //////
+
+  /* =========== Solution 7 ===========
+  return str.split('').reduce(function(revStr, char){
+    return char + revStr;
+  }, '')*/
+
+  // ======== Solution 8 ==========
+  return str.split("").reduce((revStr, char) => char + revStr, "");
+}
