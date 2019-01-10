@@ -99,3 +99,15 @@ function reverseString(str) {
   // ======== Solution 8 ==========
   return str.split("").reduce((revStr, char) => char + revStr, "");
 }
+
+// Return true if palindrome and false if not
+// ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
+
+function isPalindrome(str) {
+  const revStr = str
+    .split("")
+    .reverse()
+    .join("");
+
+  return revStr === str;
+}
