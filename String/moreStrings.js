@@ -115,3 +115,66 @@ function isPalindrome(str) {
 }
 
 console.log(isPalindrome("racecar"));
+
+/*============================
+ Multiply numbers as strings. 
+============================*/
+
+function multiply(a, b) {
+  /* ====Solution 1 for small numbers ====
+  var num1 = +a;
+  var num2 = +b;
+
+  var result = num1 * num2;
+  //console.log(result);
+  return `${result}`;
+}
+  // console.log(multiply("11", "85")); returns '935'
+  // console.log(multiply("98765", "56894")); returns "5619135910"
+  */
+
+  /* ==== Solution 2 ==== 
+  
+  const {BigInteger} = require('bignumber');
+
+function multiply(a, b) {
+  return new BigInteger(a).multiply(new BigInteger(b)).toString();
+}
+  */
+
+  /* === Solution 3 works with big numbers */
+  if (parseInt(a) == 0 || parseInt(b) == 0) {
+    return "0";
+  }
+
+  a = a.split("").reverse();
+  b = b.split("").reverse();
+  var result = [];
+
+  for (var i = 0; a[i] >= 0; i++) {
+    for (var j = 0; b[j] >= 0; j++) {
+      if (!result[i + j]) {
+        result[i + j] = 0;
+      }
+
+      result[i + j] += a[i] * b[j];
+    }
+  }
+  console.log(result);
+  for (var i = 0; result[i] >= 0; i++) {
+    if (result[i] >= 10) {
+      if (!result[i + 1]) {
+        result[i + 1] = 0;
+      }
+
+      result[i + 1] += parseInt(result[i] / 10);
+      result[i] %= 10;
+    }
+  }
+  while (result[result.length - 1] === 0) {
+    result.pop();
+  }
+  return result.reverse().join("");
+}
+
+console.log(multiply("1020303004875647366210", "2774537626200857473632627613")); // returns "2830869077153280552556547081187254342445169156730"
